@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV Services – StemNGO Jobs Kenya</title>
+
+  <link rel="icon" type="image/x-icon" href="Images/favicon_io/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon_io/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="Images/favicon_io/apple-touch-icon.png">
+  <link rel="manifest" href="Images/favicon_io/site.webmanifest">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Plus Jakarta Sans', sans-serif; }
+    h1,h2,h3,h4,.font-display { font-family: 'Bricolage Grotesque', sans-serif; }
+    body { background:#fff; color:#0d1b2a; }
+    #popup { transition: opacity 0.4s, transform 0.4s; }
+    .pricing-card { transition: transform 0.2s, box-shadow 0.2s; }
+    .pricing-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,74,173,0.15); }
+    .step-num { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 3rem; line-height: 1; color: #e8f0fc; }
+  </style>
+</head>
+<body class="min-h-screen bg-white">
+
+<!-- ═══ NAV ═══ -->
+<nav class="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-slate-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2.5">
+      <img src="Images/favicon_io/android-chrome-192x192.png" alt="StemNGO Jobs" class="w-8 h-8 rounded-lg object-cover">
+      <span class="font-display font-800 text-lg tracking-tight text-slate-900">StemNGO<span style="color:#004aad">Jobs</span></span>
+    </a>
+
+    <div class="hidden md:flex items-center gap-8">
+      <a href="index.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Jobs</a>
+      <a href="cv-services.html" class="text-sm font-semibold" style="color:#004aad">CV Services</a>
+      <a href="recruiters.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">For Recruiters</a>
+      <a href="contact.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Contact</a>
+    </div>
+
+    <a href="contact.html?type=post-job" class="hidden md:inline-flex items-center gap-1.5 text-white text-sm font-semibold px-4 py-2 rounded-xl transition-colors" style="background:#004aad" onmouseover="this.style.background='#1a6fd4'" onmouseout="this.style.background='#004aad'">
+      Post a Job
+      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
+    </a>
+
+    <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100" aria-label="Open menu">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+
+  <div id="mobileMenu" class="hidden md:hidden border-t border-slate-100 bg-white px-4 py-4 flex flex-col gap-4">
+    <a href="index.html" class="text-sm font-medium text-slate-600">Jobs</a>
+    <a href="cv-services.html" class="text-sm font-semibold" style="color:#004aad">CV Services</a>
+    <a href="recruiters.html" class="text-sm font-medium text-slate-600">For Recruiters</a>
+    <a href="contact.html" class="text-sm font-medium text-slate-600">Contact</a>
+    <a href="contact.html?type=post-job" class="text-white text-sm font-semibold px-4 py-2.5 rounded-xl text-center" style="background:#004aad">Post a Job</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="px-4 py-16 sm:py-24 text-center max-w-3xl mx-auto">
+  <div class="inline-flex items-center gap-2 text-xs font-bold px-3 py-1.5 rounded-full mb-6" style="background:#e8f0fc;color:#004aad">
+    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+    NGO/STEM ATS Optimization Specialists
+  </div>
+  <h1 class="font-display font-800 text-4xl sm:text-5xl text-slate-900 leading-tight mb-5 tracking-tight">
+    Your CV Shouldn't Be Why<br/><span style="color:#004aad">You Don't Get the Job.</span>
+  </h1>
+  <p class="text-slate-500 text-lg sm:text-xl font-light mb-8 leading-relaxed">
+    Most STEM and NGO applications are rejected by Applicant Tracking Systems before a human ever reads them. We fix that.
+  </p>
+  <a href="#packages" class="inline-flex items-center gap-2 text-white font-semibold px-8 py-4 rounded-2xl transition-colors text-base" style="background:#004aad" onmouseover="this.style.background='#1a6fd4'" onmouseout="this.style.background='#004aad'">
+    See Packages &amp; Prices
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+  </a>
+  <div class="flex flex-wrap justify-center gap-6 mt-10 text-sm text-slate-500">
+    <span class="flex items-center gap-1.5"><span class="text-amber-400">★★★★★</span> 4.9/5 from 340+ reviews</span>
+    <span>·</span>
+    <span>Trusted by IRC, UNICEF, Twiga applicants</span>
+    <span>·</span>
+    <span>48-hour turnaround</span>
+  </div>
+</section>
+
+<!-- BEFORE/AFTER -->
+<section class="bg-slate-50 py-12 px-4">
+  <div class="max-w-4xl mx-auto">
+    <p class="text-center text-xs font-bold uppercase tracking-widest mb-8" style="color:#004aad">The ATS Problem</p>
+    <div class="grid sm:grid-cols-2 gap-5">
+      <div class="bg-white border border-red-100 rounded-2xl p-6">
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center text-red-500 text-xs font-bold">✗</div>
+          <p class="font-display font-700 text-slate-900 text-sm">Typical Kenyan CV</p>
+        </div>
+        <ul class="text-sm text-slate-500 space-y-2 leading-relaxed">
+          <li>· Tables and text boxes ATS can't parse</li>
+          <li>· Missing donor-agency keywords (USAID, SDG)</li>
+          <li>· Generic "Objective" statements</li>
+          <li>· Saved as .docx with corrupt encoding</li>
+          <li>· No quantified impact metrics</li>
+        </ul>
+      </div>
+      <div class="bg-white border border-emerald-100 rounded-2xl p-6">
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-6 h-6 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 text-xs font-bold">✓</div>
+          <p class="font-display font-700 text-slate-900 text-sm">StemNGO Optimised CV</p>
+        </div>
+        <ul class="text-sm text-slate-500 space-y-2 leading-relaxed">
+          <li>· Clean single-column ATS-safe format</li>
+          <li>· Sector-specific keywords injected</li>
+          <li>· Impact-led bullet points with metrics</li>
+          <li>· Tailored to each application sector</li>
+          <li>· Donor/INGO formatting standards</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+  <div class="text-center mb-12">
+    <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color:#004aad">How It Works</p>
+    <h2 class="font-display font-700 text-3xl text-slate-900">Three Steps to a<br/>Shortlist-Ready CV</h2>
+  </div>
+  <div class="grid sm:grid-cols-3 gap-8">
+    <div>
+      <div class="step-num mb-2">01</div>
+      <h3 class="font-display font-700 text-slate-900 text-base mb-2">Upload Your CV</h3>
+      <p class="text-sm text-slate-500 leading-relaxed">Share your current CV and the types of roles you're targeting (STEM / NGO / Wildcard, county, seniority).</p>
+    </div>
+    <div>
+      <div class="step-num mb-2">02</div>
+      <h3 class="font-display font-700 text-slate-900 text-base mb-2">Expert Rewrite</h3>
+      <p class="text-sm text-slate-500 leading-relaxed">Our sector specialists rewrite for ATS compliance, keyword density, and impact — within 48 hours.</p>
+    </div>
+    <div>
+      <div class="step-num mb-2">03</div>
+      <h3 class="font-display font-700 text-slate-900 text-base mb-2">Review &amp; Apply</h3>
+      <p class="text-sm text-slate-500 leading-relaxed">Receive two format versions (PDF + DOCX), an ATS score report, and a 7-day revision window.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages" class="bg-slate-900 text-white py-16 sm:py-20 px-4">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-12">
+      <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color:#60a5fa">Pricing</p>
+      <h2 class="font-display font-700 text-3xl sm:text-4xl text-white mb-3">NGO/STEM CV Packages</h2>
+      <p class="text-slate-400 text-sm">All prices in Kenyan Shillings. M-Pesa &amp; card accepted.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="pricing-card bg-slate-800 rounded-2xl p-6 border border-slate-700">
+        <p class="text-xs text-slate-400 font-semibold uppercase tracking-wider mb-3">Starter</p>
+        <p class="font-display font-800 text-3xl text-white mb-1">Free</p>
+        <p class="text-xs text-slate-400 mb-5">ATS Score Only</p>
+        <ul class="text-sm text-slate-300 space-y-2 mb-6">
+          <li class="flex items-start gap-2"><span style="color:#60a5fa" class="mt-0.5">✓</span> ATS compatibility score</li>
+          <li class="flex items-start gap-2"><span style="color:#60a5fa" class="mt-0.5">✓</span> Top 3 improvement areas</li>
+          <li class="flex items-start gap-2 text-slate-500"><span class="mt-0.5">✗</span> Rewrite</li>
+          <li class="flex items-start gap-2 text-slate-500"><span class="mt-0.5">✗</span> Keyword injection</li>
+        </ul>
+        <a href="contact.html?subject=Free%20CV%20Review" class="block border border-slate-500 text-slate-300 font-semibold text-sm text-center py-3 rounded-xl hover:bg-slate-700 transition-colors">Get Free Score</a>
+      </div>
+      <div class="pricing-card bg-slate-800 rounded-2xl p-6 border border-slate-700">
+        <p class="text-xs text-slate-400 font-semibold uppercase tracking-wider mb-3">Essential</p>
+        <p class="font-display font-800 text-3xl text-white mb-1">2,500</p>
+        <p class="text-xs text-slate-400 mb-5">KES · Entry-level</p>
+        <ul class="text-sm text-slate-300 space-y-2 mb-6">
+          <li class="flex items-start gap-2"><span style="color:#60a5fa" class="mt-0.5">✓</span> ATS-safe format rewrite</li>
+          <li class="flex items-start gap-2"><span style="color:#60a5fa" class="mt-0.5">✓</span> Keyword optimization</li>
+          <li class="flex items-start gap-2"><span style="color:#60a5fa" class="mt-0.5">✓</span> PDF + DOCX delivery</li>
+          <li class="flex items-start gap-2 text-slate-500"><span class="mt-0.5">✗</span> Cover letter</li>
+        </ul>
+        <a href="contact.html?subject=Essential%20CV%20Package" class="block border font-semibold text-sm text-center py-3 rounded-xl hover:bg-blue-900 transition-colors" style="border-color:#60a5fa;color:#60a5fa">Order Now</a>
+      </div>
+      <div class="pricing-card rounded-2xl p-6 relative" style="background:#004aad">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-400 text-slate-900 text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap">Most Popular</div>
+        <p class="text-xs text-blue-200 font-semibold uppercase tracking-wider mb-3">Professional</p>
+        <p class="font-display font-800 text-3xl text-white mb-1">5,000</p>
+        <p class="text-xs text-blue-200 mb-5">KES · Mid–Senior level</p>
+        <ul class="text-sm text-blue-100 space-y-2 mb-6">
+          <li class="flex items-start gap-2"><span class="text-white mt-0.5">✓</span> Everything in Essential</li>
+          <li class="flex items-start gap-2"><span class="text-white mt-0.5">✓</span> Sector-specific cover letter</li>
+          <li class="flex items-start gap-2"><span class="text-white mt-0.5">✓</span> LinkedIn headline rewrite</li>
+          <li class="flex items-start gap-2"><span class="text-white mt-0.5">✓</span> 2 targeted job applications</li>
+          <li class="flex items-start gap-2"><span class="text-white mt-0.5">✓</span> 7-day revision window</li>
+        </ul>
+        <a href="contact.html?subject=Professional%20CV%20Package" class="block bg-white font-semibold text-sm text-center py-3 rounded-xl hover:bg-blue-50 transition-colors" style="color:#004aad">Order Now</a>
+      </div>
+      <div class="pricing-card bg-slate-800 rounded-2xl p-6 border border-slate-700">
+        <p class="text-xs text-slate-400 font-semibold uppercase tracking-wider mb-3">Executive</p>
+        <p class="font-display font-800 text-3xl text-white mb-1">12,000</p>
+        <p class="text-xs text-slate-400 mb-5">KES · Director/CXO level</p>
+        <ul class="text-sm text-slate-300 space-y-2 mb-6">
+          <li class="flex items-start gap-2"><span style="color:#60a5fa" class="mt-0.5">✓</span> Everything in Professional</li>
+          <li class="flex items-start gap-2"><span style="color:#60a5fa" class="mt-0.5">✓</span> 1-hr strategy call</li>
+          <li class="flex items-start gap-2"><span style="color:#60a5fa" class="mt-0.5">✓</span> INGO board bio writing</li>
+          <li class="flex items-start gap-2"><span style="color:#60a5fa" class="mt-0.5">✓</span> Unlimited revisions (30 days)</li>
+          <li class="flex items-start gap-2"><span style="color:#60a5fa" class="mt-0.5">✓</span> Priority 24hr delivery</li>
+        </ul>
+        <a href="contact.html?subject=Executive%20CV%20Package" class="block border border-slate-500 text-slate-300 font-semibold text-sm text-center py-3 rounded-xl hover:bg-slate-700 transition-colors">Order Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+  <div class="text-center mb-10">
+    <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color:#004aad">Testimonials</p>
+    <h2 class="font-display font-700 text-3xl text-slate-900">From Applicant to Shortlisted</h2>
+  </div>
+  <div class="grid sm:grid-cols-2 gap-5">
+    <div class="bg-slate-50 rounded-2xl p-6">
+      <div class="flex items-center gap-1 text-amber-400 mb-3 text-sm">★★★★★</div>
+      <p class="text-slate-600 text-sm leading-relaxed mb-4">"I had applied to 40+ NGO roles with no response. After the Professional package, I got 3 interview calls within 2 weeks — including IRC and Plan International."</p>
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full flex items-center justify-center font-display font-700 text-sm" style="background:#e8f0fc;color:#004aad">AM</div>
+        <div><p class="text-xs font-semibold text-slate-900">Amina M.</p><p class="text-xs text-slate-400">Program Officer, Nairobi</p></div>
+      </div>
+    </div>
+    <div class="bg-slate-50 rounded-2xl p-6">
+      <div class="flex items-center gap-1 text-amber-400 mb-3 text-sm">★★★★★</div>
+      <p class="text-slate-600 text-sm leading-relaxed mb-4">"As a biomedical engineer switching from academia to industry, the team knew exactly which keywords to use for Kenyan healthtech companies. Landed at Afya Biotech."</p>
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full flex items-center justify-center font-display font-700 text-sm" style="background:#e8f0fc;color:#004aad">JK</div>
+        <div><p class="text-xs font-semibold text-slate-900">James K.</p><p class="text-xs text-slate-400">Biomedical Engineer, Mombasa</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="bg-slate-50 py-12 px-4">
+  <div class="max-w-2xl mx-auto">
+    <h2 class="font-display font-700 text-2xl text-slate-900 text-center mb-8">Frequently Asked</h2>
+    <div class="space-y-3" id="faq">
+      <div class="bg-white rounded-xl p-5 border border-slate-100 cursor-pointer" onclick="toggleFAQ(this)">
+        <div class="flex items-center justify-between">
+          <p class="font-semibold text-slate-900 text-sm">How do I send you my current CV?</p>
+          <svg class="w-4 h-4 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </div>
+        <p class="text-sm text-slate-500 mt-3 hidden faq-answer leading-relaxed">After ordering, you’ll be directed to our <a href="contact.html?type=cv-upload" style="color:#004aad" class="underline">contact form</a> where you can securely upload your CV and reference your order.</p>
+      </div>
+      <div class="bg-white rounded-xl p-5 border border-slate-100 cursor-pointer" onclick="toggleFAQ(this)">
+        <div class="flex items-center justify-between">
+          <p class="font-semibold text-slate-900 text-sm">What format will I receive?</p>
+          <svg class="w-4 h-4 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </div>
+        <p class="text-sm text-slate-500 mt-3 hidden faq-answer leading-relaxed">Both PDF and DOCX versions, plus an ATS score report as a PDF. The DOCX is fully editable for future customisation.</p>
+      </div>
+      <div class="bg-white rounded-xl p-5 border border-slate-100 cursor-pointer" onclick="toggleFAQ(this)">
+        <div class="flex items-center justify-between">
+          <p class="font-semibold text-slate-900 text-sm">Do you work with fresh graduates?</p>
+          <svg class="w-4 h-4 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </div>
+        <p class="text-sm text-slate-500 mt-3 hidden faq-answer leading-relaxed">Absolutely. Our Essential package is perfect for recent graduates targeting entry-level STEM, NGO, or Wildcard roles. We know how to position academic projects, volunteer work, and internships effectively.</p>
+      </div>
+      <div class="bg-white rounded-xl p-5 border border-slate-100 cursor-pointer" onclick="toggleFAQ(this)">
+        <div class="flex items-center justify-between">
+          <p class="font-semibold text-slate-900 text-sm">How do I pay?</p>
+          <svg class="w-4 h-4 text-slate-400 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </div>
+        <p class="text-sm text-slate-500 mt-3 hidden faq-answer leading-relaxed">We accept M-Pesa (Paybill: 247247, Account: your email), Visa/Mastercard, and bank transfer. Payment details are included in your order confirmation email.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="text-center py-16 px-4">
+  <h2 class="font-display font-700 text-3xl sm:text-4xl text-slate-900 mb-4">Ready to Get Shortlisted?</h2>
+  <p class="text-slate-500 text-lg mb-8 font-light">Join 1,200+ Kenyan STEM and NGO professionals who landed interviews with us.</p>
+  <a href="#packages" class="inline-flex items-center gap-2 text-white font-semibold px-8 py-4 rounded-2xl transition-colors text-base" style="background:#004aad" onmouseover="this.style.background='#1a6fd4'" onmouseout="this.style.background='#004aad'">
+    View Packages &amp; Order →
+  </a>
+</section>
+
+<!-- STICKY BANNER -->
+<div id="stickyBanner" class="fixed bottom-0 left-0 right-0 z-50 bg-slate-900 text-white border-t border-slate-700">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+    <div class="flex items-center gap-3">
+      <div class="text-white text-xs font-bold px-2 py-1 rounded-lg shrink-0" style="background:#004aad">PROMO</div>
+      <p class="text-sm">Get 20% off your first CV order — use code <strong style="color:#60a5fa">STEM20</strong></p>
+    </div>
+    <button onclick="document.getElementById('stickyBanner').remove()" class="text-slate-400 hover:text-white p-1 shrink-0">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- POPUP -->
+<div id="popup" class="fixed bottom-20 right-4 z-50 w-72 bg-white border border-slate-200 rounded-2xl shadow-2xl p-5 opacity-0 translate-y-4 invisible">
+  <button onclick="closePopup()" class="absolute top-3 right-3 text-slate-400 hover:text-slate-600 z-10">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+  </button>
+  <p class="text-xs font-semibold uppercase tracking-wider mb-1" style="color:#004aad">Featured Service</p>
+  <h4 class="font-display font-700 text-slate-900 text-base mb-2">Free ATS Score — Today Only</h4>
+  <p class="text-sm text-slate-500 mb-4">Upload your CV and get your ATS compatibility score + 3 quick wins within 2 hours.</p>
+  <a href="contact.html?subject=Free%20ATS%20Score%20Request" class="block text-white text-sm font-semibold text-center py-2.5 rounded-xl transition-colors" style="background:#004aad">Get Free Score →</a>
+</div>
+
+<script>
+let popupShown = false;
+function closePopup() {
+  const p = document.getElementById('popup');
+  p.classList.add('opacity-0','translate-y-4','invisible');
+  p.classList.remove('opacity-100','translate-y-0');
+}
+function toggleFAQ(el) {
+  const a = el.querySelector('.faq-answer'), i = el.querySelector('.faq-icon');
+  a.classList.toggle('hidden');
+  i.style.transform = a.classList.contains('hidden') ? '' : 'rotate(180deg)';
+}
+window.addEventListener('scroll', () => {
+  if (popupShown) return;
+  const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+  if (pct >= 50) {
+    popupShown = true;
+    const p = document.getElementById('popup');
+    p.classList.remove('opacity-0','translate-y-4','invisible');
+    p.classList.add('opacity-100','translate-y-0');
+  }
+});
+</script>
+
+<script>
+  (function(){
+    var b = document.getElementById('mobileMenuBtn');
+    var m = document.getElementById('mobileMenu');
+    if (b && m) b.addEventListener('click', function(){ m.classList.toggle('hidden'); });
+  })();
+</script>
+</body>
+</html>
