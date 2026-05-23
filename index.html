@@ -3,502 +3,370 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>StemNGO Jobs Kenya – STEM &amp; NGO Careers</title>
-  <meta name="description" content="Kenya's #1 STEM and NGO job board. Browse curated engineering, public health, development sector, and science jobs across all 47 counties. Free to apply."/>
+  <title>STEM and NGO Jobs in Kenya | StemNGO Jobs</title>
+  <meta name="description" content="Curated STEM, NGO and development sector jobs across Kenya. Browse engineering, public health, M&amp;E, science and programme roles. Free to apply."/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://www.stemngo.co.ke/"/>
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website"/>
-  <meta property="og:title" content="StemNGO Jobs Kenya – STEM &amp; NGO Careers"/>
-  <meta property="og:description" content="Kenya's #1 STEM and NGO job board. Browse curated engineering, public health, development sector, and science jobs across all 47 counties."/>
+  <meta property="og:title" content="STEM and NGO Jobs in Kenya | StemNGO Jobs"/>
+  <meta property="og:description" content="Curated STEM, NGO and development sector jobs across Kenya. Free to apply."/>
   <meta property="og:url" content="https://www.stemngo.co.ke/"/>
   <meta property="og:site_name" content="StemNGO Jobs Kenya"/>
 
-  <!-- Structured Data -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "StemNGO Jobs Kenya",
-    "url": "https://www.stemngo.co.ke",
-    "description": "Kenya's #1 STEM and NGO job board. Curated engineering, public health, development sector and science jobs across all 47 counties.",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://www.stemngo.co.ke/?q={search_term_string}"
-      },
-      "query-input": "required name=search_term_string"
-    }
+    "@context":"https://schema.org","@type":"WebSite",
+    "name":"StemNGO Jobs Kenya","url":"https://www.stemngo.co.ke",
+    "description":"Curated STEM, NGO and development sector jobs across Kenya.",
+    "potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.stemngo.co.ke/?q={search_term_string}"},"query-input":"required name=search_term_string"}
   }
   </script>
 
-  <!-- Favicons -->
   <link rel="icon" type="image/x-icon" href="Images/favicon_io/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon_io/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon_io/favicon-16x16.png">
   <link rel="apple-touch-icon" href="Images/favicon_io/apple-touch-icon.png">
   <link rel="manifest" href="Images/favicon_io/site.webmanifest">
 
-  <!-- AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9700277679475981" crossorigin="anonymous"></script>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            display: ['"Bricolage Grotesque"', 'sans-serif'],
-            body: ['"Plus Jakarta Sans"', 'sans-serif']
-          },
-          colors: {
-            brand: {
-              DEFAULT: '#004aad',
-              dark: '#003585',
-              light: '#1a6fd4',
-              50: '#f0f5ff',
-              100: '#e8f0fc',
-            }
-          }
-        }
-      }
-    }
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
 
   <style>
-    * { font-family: 'Plus Jakarta Sans', sans-serif; }
-    h1, h2, h3, h4, .font-display { font-family: 'Bricolage Grotesque', sans-serif; }
-    :root { --brand: #004aad; --brand-dark: #003585; --brand-light: #1a6fd4; }
-    body { background: #ffffff; color: #0d1b2a; }
-    .hero-bg { background: linear-gradient(135deg, #0d1b2a 0%, #0d2d52 55%, #004aad 100%); }
-    .job-card { transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s; border: 1.5px solid #edf4fb; }
-    .job-card:hover { box-shadow: 0 8px 32px rgba(0,74,173,0.12); transform: translateY(-2px); border-color: #c0d8f8; }
-    .tag { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
-    .search-input:focus { outline: none; box-shadow: 0 0 0 3px rgba(0,74,173,0.18); }
-    #popup { transition: opacity 0.4s, transform 0.4s; }
-    .sector-stem { background: #e8f0fc; color: #004aad; }
-    .sector-ngo  { background: #ecfdf5; color: #065f46; }
-    .sector-wild { background: #fdf4ff; color: #6b21a8; }
-    .filter-pill.active { background: #004aad !important; color: #fff !important; }
-    .featured-card { border-left: 3px solid #004aad !important; }
-    ::-webkit-scrollbar { width: 5px; }
-    ::-webkit-scrollbar-thumb { background: #d6e4f0; border-radius: 99px; }
-    .badge-virtual { background: #f0fdf4; color: #15803d; }
-    .stats-pill { background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.15); }
-    @keyframes pulse-dot { 0%,100% { opacity:1; } 50% { opacity:.4; } }
-    .pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
-    .ad-unit { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-    .ad-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #94a3b8; text-align: center; margin-bottom: 6px; }
+    :root { --brand:#004aad; --brand-dark:#003585; --brand-light:#1a6fd4; --ink:#0d1b2a; --muted:#475569; }
+    *{ font-family:'Plus Jakarta Sans',sans-serif; }
+    h1,h2,h3,h4,.font-display{ font-family:'Bricolage Grotesque',sans-serif; letter-spacing:-0.01em; }
+    body{ background:#fff; color:var(--ink); }
+    .hero-bg{ background:linear-gradient(135deg,#0d1b2a 0%,#0d2d52 55%,#004aad 100%); }
+    .job-card{ transition:box-shadow .18s, transform .18s, border-color .18s; border:1px solid #e7eef7; }
+    .job-card:hover{ box-shadow:0 6px 24px rgba(0,74,173,.08); transform:translateY(-1px); border-color:#c0d8f8; }
+    .featured-card{ border-left:3px solid #004aad; }
+    .tag{ font-size:.7rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
+    .search-input:focus{ outline:none; box-shadow:0 0 0 3px rgba(0,74,173,.18); }
+    .sector-stem{ background:#e8f0fc; color:#004aad; }
+    .sector-ngo{ background:#ecfdf5; color:#065f46; }
+    .sector-wild{ background:#fdf4ff; color:#6b21a8; }
+    .filter-pill.active{ background:#004aad; color:#fff; }
+    .badge-virtual{ background:#f0fdf4; color:#15803d; }
+    .ad-label{ font-size:.65rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:#94a3b8; text-align:center; margin-bottom:6px; }
+    ::-webkit-scrollbar{ width:6px; } ::-webkit-scrollbar-thumb{ background:#d6e4f0; border-radius:99px; }
   </style>
 </head>
 <body class="min-h-screen bg-white">
 
-<!-- ═══ NAV ═══ -->
-<nav class="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-slate-100">
+<!-- NAV -->
+<nav class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-100">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
     <a href="./" class="flex items-center gap-2.5">
-      <img src="Images/favicon_io/android-chrome-192x192.png" alt="StemNGO Jobs Kenya" class="w-8 h-8 rounded-lg object-cover">
-      <span class="font-display font-800 text-lg tracking-tight text-slate-900">StemNGO<span style="color:#004aad">Jobs</span></span>
+      <img src="Images/favicon_io/android-chrome-192x192.png" alt="StemNGO Jobs" class="w-8 h-8 rounded-lg">
+      <span class="font-display font-extrabold text-lg tracking-tight">StemNGO<span style="color:var(--brand)">Jobs</span></span>
     </a>
-    <div class="hidden md:flex items-center gap-8">
-      <a href="./" class="text-sm font-semibold" style="color:#004aad">Jobs</a>
-      <a href="cv-services.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">CV Services</a>
-      <a href="recruiters.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">For Recruiters</a>
-      <a href="blog.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Blog</a>
-      <a href="contact.html" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Contact</a>
+    <div class="hidden md:flex items-center gap-7">
+      <a href="./" class="text-sm font-semibold" style="color:var(--brand)">Jobs</a>
+      <a href="blog.html" class="text-sm font-medium text-slate-600 hover:text-slate-900">Career Guides</a>
+      <a href="cv-services.html" class="text-sm font-medium text-slate-600 hover:text-slate-900">CV Services</a>
+      <a href="recruiters.html" class="text-sm font-medium text-slate-600 hover:text-slate-900">For Recruiters</a>
+      <a href="contact.html" class="text-sm font-medium text-slate-600 hover:text-slate-900">Contact</a>
     </div>
-    <a href="contact.html?type=post-job" class="hidden md:inline-flex items-center gap-1.5 text-white text-sm font-semibold px-4 py-2 rounded-xl transition-colors" style="background:#004aad" onmouseover="this.style.background='#1a6fd4'" onmouseout="this.style.background='#004aad'">
-      Post a Job
-      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
-    </a>
+    <a href="recruiters.html" class="hidden md:inline-flex items-center gap-1.5 text-white text-sm font-semibold px-4 py-2 rounded-xl" style="background:var(--brand)">Post a Job</a>
     <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100" aria-label="Open menu">
       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
     </button>
   </div>
-  <div id="mobileMenu" class="hidden md:hidden border-t border-slate-100 bg-white px-4 py-4 flex flex-col gap-4">
-    <a href="./" class="text-sm font-semibold" style="color:#004aad">Jobs</a>
-    <a href="cv-services.html" class="text-sm font-medium text-slate-600">CV Services</a>
-    <a href="recruiters.html" class="text-sm font-medium text-slate-600">For Recruiters</a>
-    <a href="blog.html" class="text-sm font-medium text-slate-600">Blog</a>
-    <a href="contact.html" class="text-sm font-medium text-slate-600">Contact</a>
-    <a href="contact.html?type=post-job" class="text-white text-sm font-semibold px-4 py-2.5 rounded-xl text-center" style="background:#004aad">Post a Job</a>
+  <div id="mobileMenu" class="hidden md:hidden border-t border-slate-100 bg-white px-4 py-4 flex flex-col gap-3">
+    <a href="./" class="text-sm font-semibold" style="color:var(--brand)">Jobs</a>
+    <a href="blog.html" class="text-sm text-slate-600">Career Guides</a>
+    <a href="cv-services.html" class="text-sm text-slate-600">CV Services</a>
+    <a href="recruiters.html" class="text-sm text-slate-600">For Recruiters</a>
+    <a href="contact.html" class="text-sm text-slate-600">Contact</a>
+    <a href="recruiters.html" class="text-white text-sm font-semibold px-4 py-2.5 rounded-xl text-center" style="background:var(--brand)">Post a Job</a>
   </div>
 </nav>
 
-<!-- ═══ TOP LEADERBOARD AD ═══ -->
-<div class="w-full bg-slate-50 border-b border-slate-100 py-2 px-4 flex flex-col items-center">
-  <p class="ad-label">Advertisement</p>
-  <ins class="adsbygoogle"
-    style="display:block;width:100%;max-width:728px;height:90px;"
-    data-ad-client="ca-pub-9700277679475981"
-    data-ad-slot="auto"
-    data-ad-format="horizontal"
-    data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
-
-<!-- ═══ HERO ═══ -->
+<!-- HERO -->
 <section class="hero-bg text-white py-14 sm:py-20 px-4">
   <div class="max-w-3xl mx-auto text-center">
-    <div class="inline-flex items-center gap-2 stats-pill text-white/80 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
-      <span class="w-1.5 h-1.5 rounded-full pulse-dot" style="background:#34d399"></span>
-      Kenya's #1 STEM &amp; NGO Job Board
-    </div>
-    <h1 class="text-4xl sm:text-5xl font-display font-800 mb-4 leading-tight tracking-tight">
-      Find Work That<br/><span style="color:#60a5fa">Actually Matters.</span>
+    <h1 class="text-4xl sm:text-5xl font-display font-extrabold mb-4 leading-tight tracking-tight">
+      STEM and NGO jobs in Kenya,<br/><span style="color:#60a5fa">curated for you.</span>
     </h1>
-    <p class="text-white/60 text-lg mb-10 font-light leading-relaxed">Curated STEM, NGO &amp; development sector opportunities across Kenya and beyond.</p>
-    <!-- Search bar -->
+    <p class="text-white/70 text-lg mb-9 leading-relaxed">Engineering, public health, M&amp;E, science and programme roles across the 47 counties. Updated daily. Free to apply.</p>
+
     <div class="bg-white rounded-2xl p-2 flex flex-col sm:flex-row gap-2 shadow-2xl">
       <div class="flex-1 relative">
         <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-        <input id="searchInput" type="text" placeholder="Title, company, keyword…" class="search-input w-full pl-9 pr-4 py-3 text-slate-900 text-sm rounded-xl bg-slate-50 border border-slate-100 focus:bg-white transition-colors">
+        <input id="searchInput" type="text" placeholder="Title, company or keyword" class="search-input w-full pl-9 pr-4 py-3 text-slate-900 text-sm rounded-xl bg-slate-50 border border-slate-100 focus:bg-white">
       </div>
-      <select id="locationFilter" class="search-input px-4 py-3 text-slate-700 text-sm rounded-xl bg-slate-50 border border-slate-100 focus:bg-white transition-colors">
-        <option value="">All Locations</option>
-        <option value="Virtual">🌐 Virtual / Remote</option>
-        <optgroup label="Top Counties">
+      <select id="locationFilter" class="search-input px-4 py-3 text-slate-700 text-sm rounded-xl bg-slate-50 border border-slate-100 focus:bg-white">
+        <option value="">All locations</option>
+        <option value="Virtual">Remote / Virtual</option>
+        <optgroup label="Top counties">
           <option>Nairobi</option><option>Mombasa</option><option>Kisumu</option><option>Nakuru</option><option>Eldoret</option><option>Thika</option><option>Malindi</option><option>Kitale</option><option>Garissa</option><option>Kakamega</option>
         </optgroup>
-        <optgroup label="Other Counties">
-          <option>Turkana</option><option>Dadaab</option><option>Kitui</option><option>Machakos</option><option>Kilifi</option><option>Kwale</option><option>Lamu</option><option>Tana River</option><option>Marsabit</option><option>Isiolo</option><option>Meru</option><option>Tharaka-Nithi</option><option>Embu</option><option>Nandi</option><option>Uasin Gishu</option><option>Trans Nzoia</option><option>West Pokot</option><option>Baringo</option><option>Laikipia</option><option>Nyeri</option><option>Kirinyaga</option><option>Murang'a</option><option>Kiambu</option><option>Nyandarua</option><option>Vihiga</option><option>Bungoma</option><option>Busia</option><option>Siaya</option><option>Homa Bay</option><option>Migori</option><option>Kisii</option><option>Nyamira</option><option>Bomet</option><option>Narok</option><option>Kajiado</option><option>Makueni</option><option>Samburu</option><option>Mandera</option><option>Wajir</option><option>Kericho</option>
+        <optgroup label="Other counties">
+          <option>Turkana</option><option>Kitui</option><option>Machakos</option><option>Kilifi</option><option>Kwale</option><option>Lamu</option><option>Tana River</option><option>Marsabit</option><option>Isiolo</option><option>Meru</option><option>Tharaka-Nithi</option><option>Embu</option><option>Nandi</option><option>Uasin Gishu</option><option>Trans Nzoia</option><option>West Pokot</option><option>Baringo</option><option>Laikipia</option><option>Nyeri</option><option>Kirinyaga</option><option>Murang'a</option><option>Kiambu</option><option>Nyandarua</option><option>Vihiga</option><option>Bungoma</option><option>Busia</option><option>Siaya</option><option>Homa Bay</option><option>Migori</option><option>Kisii</option><option>Nyamira</option><option>Bomet</option><option>Narok</option><option>Kajiado</option><option>Makueni</option><option>Samburu</option><option>Mandera</option><option>Wajir</option><option>Kericho</option>
         </optgroup>
       </select>
-      <select id="sectorFilter" class="search-input px-4 py-3 text-slate-700 text-sm rounded-xl bg-slate-50 border border-slate-100 focus:bg-white transition-colors">
-        <option value="">All Sectors</option>
-        <option>STEM</option>
-        <option>NGO</option>
-        <option>Wildcard</option>
+      <select id="sectorFilter" class="search-input px-4 py-3 text-slate-700 text-sm rounded-xl bg-slate-50 border border-slate-100 focus:bg-white">
+        <option value="">All sectors</option><option>STEM</option><option>NGO</option><option>Wildcard</option>
       </select>
-      <button onclick="applyFilters()" class="text-white font-semibold text-sm px-6 py-3 rounded-xl transition-colors" style="background:#004aad" onmouseover="this.style.background='#1a6fd4'" onmouseout="this.style.background='#004aad'">Search</button>
+      <button onclick="applyFilters()" class="text-white font-semibold text-sm px-6 py-3 rounded-xl" style="background:var(--brand)">Search</button>
     </div>
-    <!-- Stats -->
-    <div class="flex justify-center gap-8 mt-8 text-white/50 text-xs flex-wrap">
-      <span><strong class="text-white text-base font-display" id="statCount">—</strong> live jobs</span>
-      <span><strong class="text-white text-base font-display">47</strong> counties</span>
+
+    <div class="flex justify-center gap-6 mt-7 text-white/55 text-xs flex-wrap">
+      <span><strong class="text-white text-base font-display" id="statCount">.</strong> live jobs</span>
+      <span><strong class="text-white text-base font-display" id="statToday">.</strong> new this week</span>
       <span><strong class="text-white text-base font-display">Free</strong> to apply</span>
     </div>
   </div>
 </section>
 
-<!-- ═══ MAIN CONTENT ═══ -->
+<!-- QUICK SECTORS -->
+<section class="border-b border-slate-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-5 flex flex-wrap items-center gap-2 text-sm">
+    <span class="text-slate-400 text-xs font-semibold uppercase tracking-wider mr-2">Browse</span>
+    <button onclick="quickFilter('STEM')" class="px-3 py-1.5 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-700 text-xs font-semibold">Engineering</button>
+    <button onclick="quickFilter('NGO')" class="px-3 py-1.5 rounded-full bg-slate-50 hover:bg-emerald-50 text-slate-700 text-xs font-semibold">Public Health</button>
+    <button onclick="quickFilter('NGO')" class="px-3 py-1.5 rounded-full bg-slate-50 hover:bg-emerald-50 text-slate-700 text-xs font-semibold">M&amp;E / Programme</button>
+    <button onclick="quickFilter('STEM')" class="px-3 py-1.5 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-700 text-xs font-semibold">Software &amp; Data</button>
+    <button onclick="quickFilter('STEM')" class="px-3 py-1.5 rounded-full bg-slate-50 hover:bg-blue-50 text-slate-700 text-xs font-semibold">Science &amp; Research</button>
+    <button onclick="quickLocation('Virtual')" class="px-3 py-1.5 rounded-full bg-slate-50 hover:bg-green-50 text-slate-700 text-xs font-semibold">Remote</button>
+  </div>
+</section>
+
+<!-- MAIN -->
 <main class="max-w-7xl mx-auto px-4 sm:px-6 py-10">
   <div class="flex flex-col lg:flex-row gap-8">
-
-    <!-- Job Feed -->
     <div class="flex-1 min-w-0">
-      <!-- Filter pills -->
-      <div class="flex items-center justify-between mb-6">
+      <div class="flex items-center justify-between mb-5">
         <div class="flex gap-2 flex-wrap">
-          <button onclick="filterSector('', this)" class="filter-pill active tag px-3 py-1.5 rounded-full transition-colors" style="background:#004aad;color:white">All</button>
-          <button onclick="filterSector('STEM', this)" class="filter-pill tag bg-slate-100 text-slate-600 px-3 py-1.5 rounded-full hover:bg-brand-100 transition-colors">STEM</button>
-          <button onclick="filterSector('NGO', this)" class="filter-pill tag bg-slate-100 text-slate-600 px-3 py-1.5 rounded-full hover:bg-brand-100 transition-colors">NGO</button>
-          <button onclick="filterSector('Wildcard', this)" class="filter-pill tag bg-slate-100 text-slate-600 px-3 py-1.5 rounded-full hover:bg-brand-100 transition-colors">Wildcard</button>
+          <button onclick="filterSector('', this)" class="filter-pill active tag px-3 py-1.5 rounded-full">All</button>
+          <button onclick="filterSector('STEM', this)" class="filter-pill tag bg-slate-100 text-slate-600 px-3 py-1.5 rounded-full">STEM</button>
+          <button onclick="filterSector('NGO', this)" class="filter-pill tag bg-slate-100 text-slate-600 px-3 py-1.5 rounded-full">NGO</button>
+          <button onclick="filterSector('Wildcard', this)" class="filter-pill tag bg-slate-100 text-slate-600 px-3 py-1.5 rounded-full">Wildcard</button>
         </div>
-        <span id="resultCount" class="text-sm text-slate-500 hidden sm:block font-medium"></span>
+        <div class="flex items-center gap-3">
+          <select id="sortBy" onchange="applyFilters()" class="text-xs font-semibold text-slate-600 bg-slate-50 border border-slate-100 rounded-lg px-3 py-1.5">
+            <option value="featured">Featured first</option>
+            <option value="deadline">Closing soonest</option>
+            <option value="title">A to Z</option>
+          </select>
+          <span id="resultCount" class="text-sm text-slate-500 hidden sm:block font-medium"></span>
+        </div>
       </div>
 
-      <!-- In-feed ad (above fold) -->
-      <div class="mb-4">
-        <p class="ad-label">Advertisement</p>
-        <ins class="adsbygoogle"
-          style="display:block;border-radius:12px;overflow:hidden;"
-          data-ad-client="ca-pub-9700277679475981"
-          data-ad-slot="auto"
-          data-ad-format="fluid"
-          data-ad-layout-key="-fb+5w+4e-db+86"
-          data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-      </div>
-
-      <!-- Job listings -->
-      <div id="jobFeed" class="flex flex-col gap-4">
+      <div id="jobFeed" class="flex flex-col gap-3">
         <div class="text-center py-16">
-          <div class="inline-block w-8 h-8 border-2 border-brand-100 rounded-full animate-spin" style="border-top-color:#004aad"></div>
-          <p class="text-slate-400 text-sm mt-3">Loading jobs…</p>
+          <div class="inline-block w-7 h-7 border-2 border-blue-100 rounded-full animate-spin" style="border-top-color:var(--brand)"></div>
+          <p class="text-slate-400 text-sm mt-3">Loading jobs.</p>
         </div>
       </div>
     </div>
 
-    <!-- Sidebar -->
     <aside class="hidden lg:block w-72 shrink-0">
       <div class="sticky top-24 flex flex-col gap-5">
-        <!-- Sidebar ad 300x250 -->
+        <div class="rounded-2xl p-5 border" style="background:linear-gradient(135deg,#f0f5ff,#e8f0fc);border-color:#c0d8f8">
+          <p class="text-xs font-bold uppercase tracking-wider mb-2" style="color:var(--brand)">Sharper CV</p>
+          <h3 class="font-display font-bold text-slate-900 text-base mb-2 leading-snug">Get past the ATS in 48 hours.</h3>
+          <p class="text-xs text-slate-600 mb-4 leading-relaxed">Sector-specific keyword rewrites from KES 2,500.</p>
+          <a href="cv-services.html" class="block text-white text-xs font-semibold text-center py-2.5 rounded-xl" style="background:var(--brand)">See packages</a>
+        </div>
+
         <div>
           <p class="ad-label">Advertisement</p>
-          <ins class="adsbygoogle"
-            style="display:block;width:300px;height:250px;"
-            data-ad-client="ca-pub-9700277679475981"
-            data-ad-slot="auto"
-            data-ad-format="rectangle"></ins>
+          <ins class="adsbygoogle" style="display:block;width:300px;height:250px;" data-ad-client="ca-pub-9700277679475981" data-ad-slot="auto" data-ad-format="rectangle"></ins>
           <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         </div>
 
-        <!-- Sidebar ad 300x600 -->
-        <div>
-          <p class="ad-label">Advertisement</p>
-          <ins class="adsbygoogle"
-            style="display:block;width:300px;height:600px;"
-            data-ad-client="ca-pub-9700277679475981"
-            data-ad-slot="auto"
-            data-ad-format="rectangle"></ins>
-          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        <div class="rounded-2xl p-5 border border-slate-100 bg-white">
+          <p class="text-xs font-bold uppercase tracking-wider mb-2 text-slate-400">Hiring?</p>
+          <h3 class="font-display font-bold text-slate-900 text-base mb-2 leading-snug">Post a job free.</h3>
+          <p class="text-xs text-slate-500 mb-4 leading-relaxed">Reach STEM and NGO candidates across all 47 counties.</p>
+          <a href="recruiters.html" class="block border text-xs font-semibold text-center py-2.5 rounded-xl" style="border-color:var(--brand);color:var(--brand)">Post a job</a>
         </div>
       </div>
     </aside>
   </div>
 
-  <!-- Bottom in-content ad -->
-  <div class="mt-10">
+  <div class="mt-12">
     <p class="ad-label">Advertisement</p>
-    <ins class="adsbygoogle"
-      style="display:block;"
-      data-ad-client="ca-pub-9700277679475981"
-      data-ad-slot="auto"
-      data-ad-format="auto"
-      data-full-width-responsive="true"></ins>
+    <ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-9700277679475981" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   </div>
 </main>
 
-<!-- ═══ SCROLL POP-UP ═══ -->
-<div id="popup" class="fixed bottom-6 right-4 z-50 w-72 bg-white border border-slate-200 rounded-2xl shadow-2xl p-5 opacity-0 translate-y-4 invisible">
-  <button onclick="closePopup()" class="absolute top-3 right-3 text-slate-400 hover:text-slate-600 z-10">
-    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-  </button>
-  <p class="ad-label mb-1">Advertisement</p>
-  <!-- Popup ad unit -->
-  <ins class="adsbygoogle"
-    style="display:block;width:240px;height:200px;"
-    data-ad-client="ca-pub-9700277679475981"
-    data-ad-slot="auto"
-    data-ad-format="rectangle"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
+<!-- FOOTER -->
+<footer class="border-t border-slate-100 bg-slate-50 mt-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10 grid sm:grid-cols-4 gap-8 text-sm">
+    <div>
+      <p class="font-display font-extrabold text-slate-900 mb-2">StemNGO<span style="color:var(--brand)">Jobs</span></p>
+      <p class="text-slate-500 text-xs leading-relaxed">A curated job board for STEM and NGO professionals across Kenya.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-900 mb-3 text-xs uppercase tracking-wider">Jobseekers</p>
+      <ul class="space-y-2 text-slate-600">
+        <li><a href="./" class="hover:text-slate-900">Browse jobs</a></li>
+        <li><a href="cv-services.html" class="hover:text-slate-900">CV services</a></li>
+        <li><a href="blog.html" class="hover:text-slate-900">Career guides</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-900 mb-3 text-xs uppercase tracking-wider">Recruiters</p>
+      <ul class="space-y-2 text-slate-600">
+        <li><a href="recruiters.html" class="hover:text-slate-900">Post a job</a></li>
+        <li><a href="recruiters.html#packages" class="hover:text-slate-900">Pricing</a></li>
+        <li><a href="contact.html" class="hover:text-slate-900">Talk to us</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-semibold text-slate-900 mb-3 text-xs uppercase tracking-wider">Company</p>
+      <ul class="space-y-2 text-slate-600">
+        <li><a href="contact.html" class="hover:text-slate-900">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-slate-200 px-4 py-5 text-center text-xs text-slate-400">
+    &copy; <span id="year"></span> StemNGO Jobs Kenya. All rights reserved.
+  </div>
+</footer>
 
 <script>
 const JOBS_API = 'https://script.google.com/macros/s/AKfycbyA5v99uBgi0z0nvm-QlgKHypIEBzjs2TsdSMaw8IvrZz74_-YaeO0DfSEqMSI4O3yS8w/exec';
 let allJobs = [];
-let popupShown = false;
 
-document.getElementById('mobileMenuBtn').addEventListener('click', () => {
-  document.getElementById('mobileMenu').classList.toggle('hidden');
-});
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('mobileMenuBtn').addEventListener('click', () => document.getElementById('mobileMenu').classList.toggle('hidden'));
 
-function normalizeJob(row) {
-  const tier = (row.tier || 'standard').toLowerCase();
+function normalizeJob(row){
+  const tier = String(row.tier || 'standard').toLowerCase();
   const featured = row.is_featured === 'TRUE' || row.is_featured === '1' || row.is_featured === 'true' || row.is_featured === true || tier === 'featured';
- 
-// Look for any key variance in case your API serves it capitalized
-  const systemId = row.id || row.ID || row.Id; 
- 
+  const id = row.id || row.ID || row.Id || row.title || '';
   return {
-    id: systemId ? String(systemId).trim() : Math.random().toString(36).slice(2),
-    title: row.title || '',
-    company: row.company || '',
-    sector: row.sector || 'Wildcard',
-    location: row.location || '',
-    deadline: row.deadline || '',
-    description: row.description || '',
-    qualifications: row.qualifications || '',
-    project_context: row.project_context || '',
+    id: String(id).trim(),
+    title: row.title || '', company: row.company || '',
+    sector: row.sector || 'Wildcard', location: row.location || '',
+    deadline: row.deadline || '', description: row.description || '',
     apply_link: row.apply_link || '#',
-    tier: tier,
-    is_featured: featured,
-    is_premium: tier === 'premium',
-    is_virtual: row.location === 'Virtual' || (row.location || '').toLowerCase().includes('virtual') || (row.location || '').toLowerCase().includes('remote')
+    tier, is_featured: featured, is_premium: tier === 'premium',
+    is_virtual: /virtual|remote/i.test(row.location || '')
   };
 }
+function isExpired(d){ if(!d) return false; const x=new Date(d); return !isNaN(x) && x < new Date(); }
+function daysUntil(d){ if(!d) return null; const x=new Date(d); if(isNaN(x)) return null; return Math.ceil((x - new Date())/86400000); }
+function isRecent(d){ const x=daysUntil(d); return x !== null && x > 21; }
 
-function isExpired(deadline) {
-  if (!deadline) return false;
-  const d = new Date(deadline);
-  if (isNaN(d)) return false;
-  return d < new Date();
-}
-
-async function loadJobs() {
+async function loadJobs(){
   try {
     const res = await fetch(JOBS_API);
-    if (!res.ok) throw new Error('Network error');
     const data = await res.json();
-    
-    // Extract the raw spreadsheet rows safely
     const rows = Array.isArray(data) ? data : (data.jobs || []);
-    
-    // Normalize properties and filter out expired dates
     allJobs = rows.map(normalizeJob).filter(j => !isExpired(j.deadline));
-    
-    // Update the live job counter badge at the top
-    const statCountEl = document.getElementById('statCount');
-    if (statCountEl) statCountEl.textContent = allJobs.length;
-    
-    // Render everything to the feed
-    renderJobs(allJobs);
-  } catch(e) {
-    console.error("Error loading jobs:", e);
+    document.getElementById('statCount').textContent = allJobs.length;
+    document.getElementById('statToday').textContent = allJobs.filter(j => isRecent(j.deadline)).length;
+    renderJobs(sortJobs(allJobs));
+  } catch(e){
     document.getElementById('jobFeed').innerHTML = `
-      <div class="text-center py-16 text-slate-400 rounded-2xl border border-slate-100">
-        <div class="text-3xl mb-3">⚠️</div>
-        <p class="text-lg font-display font-600 text-red-600">Failed to load job listings</p>
-        <p class="text-sm mt-1">Please check your connection or refresh the page.</p>
+      <div class="text-center py-16 text-slate-500 rounded-2xl border border-slate-100">
+        <p class="text-lg font-display font-bold text-slate-800">Couldn't load jobs right now.</p>
+        <p class="text-sm mt-1">Please refresh the page or try again shortly.</p>
       </div>`;
   }
 }
-function deadlineLabel(dateStr) {
-  if (!dateStr) return { text: 'Open', cls: 'text-slate-400' };
-  const d = new Date(dateStr);
-  if (isNaN(d)) return { text: dateStr, cls: 'text-slate-400' };
-  const diff = Math.ceil((d - new Date()) / (1000 * 60 * 60 * 24));
-  if (diff < 0)  return { text: 'Expired', cls: 'text-slate-400 line-through' };
-  if (diff === 0) return { text: 'Today!', cls: 'text-red-600 font-bold' };
-  if (diff <= 3)  return { text: `${diff}d left`, cls: 'text-red-500 font-bold' };
-  if (diff <= 7)  return { text: `${diff}d left`, cls: 'text-orange-500 font-semibold' };
-  return { text: d.toLocaleDateString('en-KE', { day:'numeric', month:'short' }), cls: 'text-slate-500' };
+function deadlineLabel(s){
+  if(!s) return { text:'Rolling', cls:'text-slate-400' };
+  const d = new Date(s); if(isNaN(d)) return { text:s, cls:'text-slate-400' };
+  const diff = Math.ceil((d - new Date())/86400000);
+  if (diff < 0)  return { text:'Closed', cls:'text-slate-400 line-through' };
+  if (diff === 0) return { text:'Closes today', cls:'text-red-600 font-bold' };
+  if (diff <= 3)  return { text:`${diff}d left`, cls:'text-red-500 font-bold' };
+  if (diff <= 7)  return { text:`${diff}d left`, cls:'text-orange-500 font-semibold' };
+  return { text:d.toLocaleDateString('en-KE',{day:'numeric',month:'short'}), cls:'text-slate-500' };
+}
+function sectorPill(s){
+  const cls = s==='STEM'?'sector-stem':s==='NGO'?'sector-ngo':s==='Wildcard'?'sector-wild':'bg-slate-100 text-slate-600';
+  return `<span class="tag ${cls} px-2 py-0.5 rounded-full">${s}</span>`;
 }
 
-function sectorPill(sector) {
-  if (sector === 'STEM')     return `<span class="tag sector-stem px-2 py-0.5 rounded-full">STEM</span>`;
-  if (sector === 'NGO')      return `<span class="tag sector-ngo px-2 py-0.5 rounded-full">NGO</span>`;
-  if (sector === 'Wildcard') return `<span class="tag sector-wild px-2 py-0.5 rounded-full">Wildcard</span>`;
-  return `<span class="tag bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full">${sector}</span>`;
+function sortJobs(jobs){
+  const by = document.getElementById('sortBy')?.value || 'featured';
+  const arr = [...jobs];
+  if (by === 'featured') {
+    arr.sort((a,b) => (b.is_featured - a.is_featured) || (new Date(a.deadline||'2999-01-01') - new Date(b.deadline||'2999-01-01')));
+  } else if (by === 'deadline') {
+    arr.sort((a,b) => new Date(a.deadline||'2999-01-01') - new Date(b.deadline||'2999-01-01'));
+  } else if (by === 'title') {
+    arr.sort((a,b) => a.title.localeCompare(b.title));
+  }
+  return arr;
 }
 
-function adCard() {
-  const id = 'ad_' + Math.random().toString(36).slice(2);
-  setTimeout(() => {
-    try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
-  }, 100);
-  return `
-  <div style="margin:4px 0;">
-    <p class="ad-label">Advertisement</p>
-    <ins id="${id}" class="adsbygoogle"
-      style="display:block;"
-      data-ad-client="ca-pub-9700277679475981"
-      data-ad-slot="auto"
-      data-ad-format="fluid"
-      data-ad-layout-key="-fb+5w+4e-db+86"
-      data-full-width-responsive="true"></ins>
-  </div>`;
-}
-
-function renderJobs(jobs) {
+function renderJobs(jobs){
   const feed = document.getElementById('jobFeed');
   document.getElementById('resultCount').textContent = `${jobs.length} result${jobs.length !== 1 ? 's' : ''}`;
-
-  if (!jobs.length) {
+  if (!jobs.length){
     feed.innerHTML = `
-      <div class="text-center py-16 text-slate-400 rounded-2xl border border-slate-100">
-        <div class="text-3xl mb-3">🔍</div>
-        <p class="text-lg font-display font-600 text-slate-800">No jobs found</p>
-        <p class="text-sm mt-1">Try adjusting your search or filters.</p>
+      <div class="text-center py-16 text-slate-500 rounded-2xl border border-slate-100">
+        <p class="text-lg font-display font-bold text-slate-800">No jobs match your filters.</p>
+        <p class="text-sm mt-1">Try clearing a filter or broadening your search.</p>
       </div>`;
     return;
   }
-
-  let html = '';
-  jobs.forEach((job, i) => {
-    // Insert ad every 4 jobs
-    if (i > 0 && i % 4 === 0) html += adCard();
+  feed.innerHTML = jobs.map(job => {
     const dl = deadlineLabel(job.deadline);
     const featCls = job.is_featured ? 'featured-card' : '';
+    const featBadge = job.is_featured ? `<span class="tag px-2 py-0.5 rounded-full" style="background:#fffbeb;color:#b45309">Featured</span>` : '';
     const premBadge = job.is_premium ? `<span class="tag px-2 py-0.5 rounded-full" style="background:#fef9c3;color:#854d0e">Premium</span>` : '';
-    const featBadge = job.is_featured ? `<span class="tag px-2 py-0.5 rounded-full" style="background:#fffbeb;color:#d97706">Featured</span>` : '';
-    const virtualBadge = job.is_virtual ? `<span class="tag badge-virtual px-2 py-0.5 rounded-full">Virtual</span>` : '';
-
-    html += `
+    const virtBadge = job.is_virtual ? `<span class="tag badge-virtual px-2 py-0.5 rounded-full">Remote</span>` : '';
+    return `
     <article class="job-card bg-white rounded-2xl p-5 cursor-pointer ${featCls}" onclick="window.location='job-details.html?id=${encodeURIComponent(job.id)}'">
-      <div class="flex items-start gap-3 mb-3">
-        <div class="w-10 h-10 bg-slate-100 rounded-xl flex items-center justify-center shrink-0 font-display font-700 text-sm" style="color:#004aad" aria-hidden="true">
-          ${job.company.charAt(0).toUpperCase()}
-        </div>
+      <div class="flex items-start gap-3">
+        <div class="w-10 h-10 bg-slate-100 rounded-xl flex items-center justify-center shrink-0 font-display font-bold text-sm" style="color:var(--brand)">${(job.company||'?').charAt(0).toUpperCase()}</div>
         <div class="flex-1 min-w-0">
           <div class="flex flex-wrap items-center gap-1.5 mb-1">
-            ${sectorPill(job.sector)}
-            ${virtualBadge}
-            ${featBadge}
-            ${premBadge}
+            ${sectorPill(job.sector)}${virtBadge}${featBadge}${premBadge}
           </div>
-          <h2 class="font-display font-700 text-slate-900 text-base leading-snug">${job.title}</h2>
+          <h2 class="font-display font-bold text-slate-900 text-base leading-snug">${job.title}</h2>
           <p class="text-sm text-slate-500 mt-0.5 font-medium">${job.company}</p>
+          <div class="flex items-center gap-4 flex-wrap mt-3 text-xs">
+            <span class="flex items-center gap-1.5 text-slate-500">
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
+              ${job.location || 'Kenya'}
+            </span>
+            <span class="flex items-center gap-1.5 ${dl.cls}">
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              ${dl.text}
+            </span>
+          </div>
         </div>
-      </div>
-      <p class="text-sm text-slate-600 leading-relaxed mb-4 line-clamp-2">${job.description}</p>
-      <div class="flex items-center justify-between">
-        <div class="flex items-center gap-3 flex-wrap">
-          <span class="flex items-center gap-1.5 text-xs text-slate-500">
-            <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
-            ${job.location || 'Kenya'}
-          </span>
-          <span class="flex items-center gap-1.5 text-xs ${dl.cls}">
-            <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-            ${dl.text}
-          </span>
-        </div>
-        <span class="text-sm font-semibold" style="color:#004aad">View →</span>
+        <span class="hidden sm:block text-sm font-semibold self-center" style="color:var(--brand)">View &rarr;</span>
       </div>
     </article>`;
-  });
-  feed.innerHTML = html;
-  // Push all new ad units
-  try {
-    const ads = feed.querySelectorAll('.adsbygoogle:not([data-adsbygoogle-status])');
-    ads.forEach(() => { (window.adsbygoogle = window.adsbygoogle || []).push({}); });
-  } catch(e) {}
+  }).join('');
 }
 
-function applyFilters() {
-  const q   = document.getElementById('searchInput').value.toLowerCase().trim();
+function applyFilters(){
+  const q = document.getElementById('searchInput').value.toLowerCase().trim();
   const loc = document.getElementById('locationFilter').value;
   const sec = document.getElementById('sectorFilter').value;
   const filtered = allJobs.filter(j => {
-    const matchQ = !q || [j.title, j.company, j.description, j.sector].some(f => f.toLowerCase().includes(q));
-    const matchL = !loc || j.location === loc || (loc === 'Virtual' && j.is_virtual);
-    const matchS = !sec || j.sector === sec;
-    return matchQ && matchL && matchS;
+    const mq = !q || [j.title,j.company,j.description,j.sector].some(f => (f||'').toLowerCase().includes(q));
+    const ml = !loc || j.location === loc || (loc === 'Virtual' && j.is_virtual);
+    const ms = !sec || j.sector === sec;
+    return mq && ml && ms;
   });
-  renderJobs(filtered);
+  renderJobs(sortJobs(filtered));
 }
-
-function filterSector(sec, btn) {
+function filterSector(sec, btn){
   document.getElementById('sectorFilter').value = sec;
   applyFilters();
-  document.querySelectorAll('.filter-pill').forEach(p => {
-    p.style.background = ''; p.style.color = '';
-    p.classList.remove('active');
-    p.classList.add('bg-slate-100','text-slate-600');
-    p.classList.remove('text-white');
-  });
-  btn.classList.remove('bg-slate-100','text-slate-600');
-  btn.style.background = '#004aad';
-  btn.style.color = 'white';
-  btn.classList.add('active');
+  document.querySelectorAll('.filter-pill').forEach(p => { p.classList.remove('active'); p.classList.add('bg-slate-100','text-slate-600'); });
+  btn.classList.remove('bg-slate-100','text-slate-600'); btn.classList.add('active');
 }
-
+function quickFilter(sec){ document.getElementById('sectorFilter').value = sec; applyFilters(); window.scrollTo({top: document.querySelector('main').offsetTop - 60, behavior:'smooth'}); }
+function quickLocation(loc){ document.getElementById('locationFilter').value = loc; applyFilters(); window.scrollTo({top: document.querySelector('main').offsetTop - 60, behavior:'smooth'}); }
 document.getElementById('searchInput').addEventListener('keydown', e => { if (e.key === 'Enter') applyFilters(); });
-
-window.addEventListener('scroll', () => {
-  if (popupShown) return;
-  const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-  if (pct >= 50) {
-    popupShown = true;
-    const p = document.getElementById('popup');
-    p.classList.remove('opacity-0','translate-y-4','invisible');
-    p.classList.add('opacity-100','translate-y-0');
-  }
-});
-
-function closePopup() {
-  const p = document.getElementById('popup');
-  p.classList.add('opacity-0','translate-y-4','invisible');
-  p.classList.remove('opacity-100','translate-y-0');
-}
-
 loadJobs();
 </script>
 </body>
