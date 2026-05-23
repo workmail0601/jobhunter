@@ -300,25 +300,54 @@ function shareJob(platform) {
 }
 
 async function loadJob() {
-  const id = new URLSearchParams(window.location.search).get('id');
-  if (!id) { showNotFound(); return; }
+  const urlParams = new URLSearchParams(window.location.search);
+  const id = urlParams.get('id');
+  
+  if (!id) { 
+    showNotFound(); 
+    return; 
+  }
+  
   try {
-    const res = await fetch(JOBS_API);
-    if (!res.ok) throw new Error('Network error');
-    const data = await res.json();
-    const rows = Array.isArray(data) ? data : (data.jobs || []);
+    // Explicitly configure fetch to follow redirect protocols smoothly
+    const res = await fetch(JOBS_API, { method: 'GET', redirect: 'follow' });
+    if (!res.ok) throw new Error('Network response was not OK');
     
-    // Cleaner, defensive lookup engine
-    const targetId = decodeURIComponent(id).trim().toLowerCase();
-    let job = rows.find(j => {
-      if (!j.id) return false;
-      return String(j.id).trim().toLowerCase() === targetId;
-    });
+    const data = await res.json();
+    
+    // Explicitly check for both root array structures and nested .jobs namespaces
+    let rows = [];
+    if (Array.isArray(data)) {
+      rows = data;
+    } else if (data && Array.isArray(data.jobs)) {
+      rows = data.jobs;
+    } else if (data && typeof data === 'object') {
+      rows = Object.values(data).find(val => Array.isArray(val)) || [];
+    }
 
-    if (!job) { showNotFound(); return; }
+    // Sanitize search terms to clear spaces, URL encodings, and casing variants
+    const targetId = decodeURIComponent(id).trim().toLowerCase();
+    
+    // 1st Strategy Match: Exact ID lookup
+    let job = rows.find(j => j && j.id && String(j.id).trim().toLowerCase() === targetId);
+    
+    // 2nd Strategy Match (Fallback): If an un-assigned ID or cached row fails, match by unique title 
+    if (!job) {
+      job = rows.find(j => j && j.title && targetId.includes(String(j.title).trim().toLowerCase()));
+    }
+
+    if (!job) { 
+      console.warn("No match found for ID token:", targetId);
+      showNotFound(); 
+      return; 
+    }
+    
     currentJob = job;
     renderJob(job);
-  } catch(e) { showNotFound(); }
+  } catch(e) { 
+    console.error("Critical routing or parsing fault matching job ID:", e);
+    showNotFound(); 
+  }
 }
 
 function showNotFound() {
