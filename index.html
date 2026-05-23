@@ -322,30 +322,34 @@ function isExpired(deadline) {
   return d < new Date();
 }
 
-async function loadJob() {
-  const id = new URLSearchParams(window.location.search).get('id');
-  if (!id) { showNotFound(); return; }
+async function loadJobs() {
   try {
     const res = await fetch(JOBS_API);
     if (!res.ok) throw new Error('Network error');
     const data = await res.json();
+    
+    // Extract the raw spreadsheet rows safely
     const rows = Array.isArray(data) ? data : (data.jobs || []);
     
-    // Optimized look-up matching string or fallback matching
-    let job = rows.find(j => String(j.id).trim() === String(id).trim());
+    // Normalize properties and filter out expired dates
+    allJobs = rows.map(normalizeJob).filter(j => !isExpired(j.deadline));
     
-    // Fallback: If ID was temporary/randomized, try matching by URL-encoded Title parameters if available
-    if (!job) {
-      const decodedId = decodeURIComponent(id);
-      job = rows.find(j => j.title && decodedId.includes(j.title));
-    }
-
-    if (!job) { showNotFound(); return; }
-    currentJob = job;
-    renderJob(job);
-  } catch(e) { showNotFound(); }
+    // Update the live job counter badge at the top
+    const statCountEl = document.getElementById('statCount');
+    if (statCountEl) statCountEl.textContent = allJobs.length;
+    
+    // Render everything to the feed
+    renderJobs(allJobs);
+  } catch(e) {
+    console.error("Error loading jobs:", e);
+    document.getElementById('jobFeed').innerHTML = `
+      <div class="text-center py-16 text-slate-400 rounded-2xl border border-slate-100">
+        <div class="text-3xl mb-3">⚠️</div>
+        <p class="text-lg font-display font-600 text-red-600">Failed to load job listings</p>
+        <p class="text-sm mt-1">Please check your connection or refresh the page.</p>
+      </div>`;
+  }
 }
-
 function deadlineLabel(dateStr) {
   if (!dateStr) return { text: 'Open', cls: 'text-slate-400' };
   const d = new Date(dateStr);
