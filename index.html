@@ -276,6 +276,12 @@ async function loadJobs(){
 }
 function deadlineLabel(s){
   if(!s) return { text:'Rolling', cls:'text-slate-400' };
+  
+  // Clear spaces and check if it says "see listing"
+  if(String(s).toLowerCase().replace(/\s+/g, '').includes('listing')) {
+    return { text: s, cls: 'text-slate-500 font-semibold' };
+  }
+  
   const d = new Date(s); if(isNaN(d)) return { text:s, cls:'text-slate-400' };
   const diff = Math.ceil((d - new Date())/86400000);
   if (diff < 0)  return { text:'Closed', cls:'text-slate-400 line-through' };
