@@ -247,13 +247,22 @@ function renderJob(job){
   document.getElementById('ogTitle').setAttribute('content', pageTitle);
   document.getElementById('ogDesc').setAttribute('content', `${job.title} at ${job.company}, ${job.location}. Apply on StemNGO Jobs Kenya.`);
 
+//  NEW BULLETPROOF CODE:
+  let validIsoDate = undefined;
+  if (job.deadline && !job.deadline.toLowerCase().includes('listing')) {
+    const parsedDate = new Date(job.deadline);
+    if (!isNaN(parsedDate.getTime())) {
+      validIsoDate = parsedDate.toISOString();
+    }
+  }
+
   document.getElementById('jobSchema').textContent = JSON.stringify({
     "@context":"https://schema.org","@type":"JobPosting",
     title: job.title, description: job.description,
     hiringOrganization:{ "@type":"Organization", name: job.company },
     jobLocation:{ "@type":"Place", address:{ "@type":"PostalAddress", addressCountry:"KE", addressLocality: job.location } },
     employmentType:"FULL_TIME", url: canonical,
-    validThrough: job.deadline ? new Date(job.deadline).toISOString() : undefined,
+    validThrough: validIsoDate, 
     datePosted: new Date().toISOString().split('T')[0]
   });
 
