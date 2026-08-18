@@ -174,11 +174,30 @@
   <a id="stickyApplyLink" href="#" target="_blank" rel="noopener noreferrer" class="block text-white font-semibold text-sm text-center py-3.5 rounded-xl" style="background:var(--brand)">Apply now</a>
 </div>
 
+<footer class="border-t border-slate-100 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 text-center text-sm text-slate-600">
+    <p class="font-display font-extrabold text-slate-900 mb-2">StemNGO<span style="color:var(--brand)">Jobs</span> Kenya</p>
+    <div class="flex flex-wrap justify-center gap-4 mt-3 text-xs">
+      <a href="./" class="hover:text-slate-900">Jobs</a>
+      <a href="blog.html" class="hover:text-slate-900">Career Guides</a>
+      <a href="cv-services.html" class="hover:text-slate-900">CV Services</a>
+      <a href="recruiters.html" class="hover:text-slate-900">For Recruiters</a>
+      <a href="contact.html" class="hover:text-slate-900">Contact</a>
+    </div>
+    <div class="flex flex-wrap justify-center gap-4 mt-2 text-xs text-slate-400">
+      <a href="privacy.html" class="hover:text-slate-900">Privacy Policy</a>
+      <a href="terms.html" class="hover:text-slate-900">Terms of Service</a>
+    </div>
+    <p class="mt-4 text-xs text-slate-400">&copy; <span id="year"></span> StemNGO Jobs Kenya. All rights reserved.</p>
+  </div>
+</footer>
+
 <script>
 const JOBS_API = 'https://script.google.com/macros/s/AKfycbyA5v99uBgi0z0nvm-QlgKHypIEBzjs2TsdSMaw8IvrZz74_-YaeO0DfSEqMSI4O3yS8w/exec';
 let currentJob = null;
 
 document.getElementById('mobileMenuBtn').addEventListener('click', () => document.getElementById('mobileMenu').classList.toggle('hidden'));
+document.getElementById('year').textContent = new Date().getFullYear();
 
 window.addEventListener('scroll', () => {
   if (window.scrollY > 280) document.getElementById('stickyApplyBar').classList.remove('hidden');
